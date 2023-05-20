@@ -17,6 +17,12 @@ loadDataFromLocalStorage();
 function onFormSumbit(event) {
     event.preventDefault();
     event.currentTarget.reset();
+    
+    const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    console.log(savedData);
+    console.log('email:', savedData.email);
+    console.log('message:', savedData.message);
+    
     localStorage.removeItem(STORAGE_KEY);
 };
  
